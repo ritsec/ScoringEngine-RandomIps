@@ -31,10 +31,8 @@ def getHosts():
     for worker in workers:
         env['hosts'].append(worker)
         NEWIPS[worker] = new_ips.pop()
+getHosts()
 
-
-def on_detcord_begin(detfile="", hosts=[], actions=[], threading=False):
-    getHosts()
 
 def on_detcord_end(detfile=""):
     print("Saving the new IP addresses:{}\n".format("\n".join(NEWIPS.values())))
